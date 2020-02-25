@@ -15,8 +15,8 @@ provider "aws" {
 }
 
 module "s3" {
-  source  = "app.terraform.io/aetion/s3/aws"
-  version = "1.0.12"
+  source  = "app.terraform.io/victoryurkinpersonal/s3/aws"
+  version = "1.0.0"
 
   client_name = var.client_name
   environment = var.environment
