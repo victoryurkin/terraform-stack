@@ -28,5 +28,5 @@ module "cloudfront" {
   origins                = var.origins
 
   default_behavior_target_origin_id = var.default_behavior_target_origin_id
-  default_behavior_viewer_protocol_policy = var.default_behavior_viewer_protocol_policy
+  cache_behavior_viewer_protocol_policy_default = var.default_behavior_viewer_protocol_policy
 }
