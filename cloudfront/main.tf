@@ -16,7 +16,7 @@ provider "aws" {
 
 module "cloudfront" {
   source  = "app.terraform.io/victoryurkinpersonal/cloudfront/aws"
-  version = "1.0.3"
+  version = "1.0.6"
 
   client_name = var.client_name
   environment = var.environment
@@ -34,11 +34,8 @@ module "cloudfront" {
   log_bucket_domain_name            = var.log_bucket_domain_name
   log_prefix                        = var.log_prefix
 
-
   # Origins
-  origin_domain_name                = var.origin_domain_name
-  origin_path                       = var.origin_path
-  origin_id                         = var.origin_id
+  origins                           = var.origins
 
   # Behaviors
   viewer_protocol_policy            = var.viewer_protocol_policy

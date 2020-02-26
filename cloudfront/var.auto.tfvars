@@ -13,13 +13,14 @@ log_bucket_domain_name            = "frontend.us-east-1.victoryurkin.com.s3.amaz
 log_prefix                        = "logs"
 
 # Origins
-origin_domain_name                = "frontend.us-east-1.victoryurkin.com.s3.amazonaws.com"
-origin_path                       = "/main/1.0.0(1)"
-origin_id                         = "main"
+origins                           = [{
+    origin_domain_name = "frontend.us-east-1.victoryurkin.com.s3.amazonaws.com"
+    origin_path        = "/main/1.0.0(1)"
+    origin_id          = "main"
+}]
 
 # Behaviors
 viewer_protocol_policy            = "redirect-to-https"
-origin_protocol_policy            = "match-viewer"
 default_ttl                       = "86400"
 min_ttl                           = "0"
 max_ttl                           = "31536000"

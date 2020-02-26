@@ -25,24 +25,19 @@ variable "aliases" {
   default     = []
   description = "List of aliases. CAUTION! Names MUSTN'T contain trailing `.`"
 }
-variable "origin_domain_name" {
-  description = "(Required) - The DNS domain name of your custom origin (e.g. website)"
-  default     = ""
-}
 
-variable "origin_path" {
-  description = "(Optional) - An optional element that causes CloudFront to request your content from a directory in your Amazon S3 bucket or your custom origin"
-  default     = ""
-}
-
-variable "origin_id" {
-  description = "(Optional) - An optional element, the id of your custom origin"
-  default     = ""
-}
-
-variable "origin_protocol_policy" {
-  description = "(Required) - The origin protocol policy to apply to your origin. One of http-only, https-only, or match-viewer"
-  default     = "match-viewer"
+variable "origins" {
+  type = list(object({
+    domain_name              = string
+    origin_id                = string
+    origin_path              = string
+    http_port                = number
+    https_port               = number
+    origin_protocol_policy   = string
+    origin_ssl_protocols     = string
+    origin_keepalive_timeout = number
+    origin_read_timeout      = number
+  }))
 }
 
 variable "default_root_object" {
