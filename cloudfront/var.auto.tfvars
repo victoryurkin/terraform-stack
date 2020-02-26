@@ -2,28 +2,20 @@ client_name  = "baseline"
 aws_region  = "us-east-1"
 environment = "prod"
 
-# General
-aliases                           = []
-default_root_object               = "index.html"
-price_class                       = "PriceClass_All"
+# Cloudfront
+aliases                = []
+log_bucket_domain_name = "frontend.us-east-1.victoryurkin.com.s3.amazonaws.com"
 
-logging_enabled                   = "true"
-log_include_cookies               = "true"
-log_bucket_domain_name            = "frontend.us-east-1.victoryurkin.com.s3.amazonaws.com"
-log_prefix                        = "logs"
-
-# Origins
-origins                           = [{
+origins = [{
     domain_name = "frontend.us-east-1.victoryurkin.com.s3.amazonaws.com"
     path        = "/main/1.0.0(1)"
     id          = "main"
 }]
 
-# Behaviors
-viewer_protocol_policy            = "redirect-to-https"
-default_ttl                       = "86400"
-min_ttl                           = "0"
-max_ttl                           = "31536000"
-cached_methods                    = ["GET", "HEAD", "OPTIONS"]
-allowed_methods                   = ["GET", "HEAD", "OPTIONS"]
-
+behaviors = {
+    default = {
+        target_origin_id       = "main"
+        viewer_protocol_policy = "redirect-to-https"
+    }
+    ordered = []
+}
