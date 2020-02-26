@@ -44,6 +44,6 @@ variable "origins" {
 }
 
 variable "behaviors" {
-  type        = list
+  type        = object
   description = "(Required) - List of origin objects"
 }
