@@ -21,7 +21,7 @@ variable profile {
 }
 
 variable "aliases" {
-  type        = "list"
+  type        = list
   default     = []
   description = "List of aliases. CAUTION! Names MUSTN'T contain trailing `.`"
 }

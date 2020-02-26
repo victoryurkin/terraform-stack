@@ -18,9 +18,6 @@ module "cloudfront" {
   source  = "app.terraform.io/victoryurkinpersonal/cloudfront/aws"
   version = "1.0.0"
 
-  environment = var.environment
-  aws_region  = var.aws_region
-
   # CloudFront distribution config
 
   # General
