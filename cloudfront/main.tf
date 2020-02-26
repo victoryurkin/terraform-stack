@@ -16,7 +16,7 @@ provider "aws" {
 
 module "cloudfront" {
   source  = "app.terraform.io/victoryurkinpersonal/cloudfront/aws"
-  version = "1.0.1"
+  version = "1.0.2"
 
   client_name = var.client_name
   environment = var.environment
