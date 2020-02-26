@@ -14,9 +14,9 @@ log_prefix                        = "logs"
 
 # Origins
 origins                           = [{
-    origin_domain_name = "frontend.us-east-1.victoryurkin.com.s3.amazonaws.com"
-    origin_path        = "/main/1.0.0(1)"
-    origin_id          = "main"
+    domain_name = "frontend.us-east-1.victoryurkin.com.s3.amazonaws.com"
+    path        = "/main/1.0.0(1)"
+    id          = "main"
 }]
 
 # Behaviors
