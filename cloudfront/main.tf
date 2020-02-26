@@ -1,9 +1,9 @@
 terraform {
   backend "remote" {
-    organization = "aetion"
+    organization = "victoryurkinpersonal"
 
     workspaces {
-      name = "baseline-cloudfront"
+      name = "terraform-cloudfront"
     }
   }
 }

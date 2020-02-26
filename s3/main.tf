@@ -1,9 +1,9 @@
 terraform {
   backend "remote" {
-    organization = "aetion"
+    organization = "victoryurkinpersonal"
 
     workspaces {
-      name = "frontend-s3-prod"
+      name = "terraform-s3"
     }
   }
 }
