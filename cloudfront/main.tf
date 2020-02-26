@@ -16,7 +16,7 @@ provider "aws" {
 
 module "cloudfront" {
   source  = "app.terraform.io/victoryurkinpersonal/cloudfront/aws"
-  version = "1.0.2"
+  version = "1.0.3"
 
   client_name = var.client_name
   environment = var.environment
@@ -28,6 +28,12 @@ module "cloudfront" {
   aliases                           = var.aliases
   default_root_object               = var.default_root_object
   price_class                       = var.price_class
+
+  logging_enabled                   = var.logging_enabled
+  log_include_cookies               = var.log_include_cookies
+  log_bucket_domain_name            = var.log_bucket_domain_name
+  log_prefix                        = var.log_prefix
+
 
   # Origins
   origin_domain_name                = var.origin_domain_name

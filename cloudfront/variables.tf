@@ -86,3 +86,23 @@ variable "max_ttl" {
   default     = "31536000"
   description = "Maximum amount of time (in seconds) that an object is in a CloudFront cache"
 }
+
+variable "logging_enabled" {
+  default     = "false"
+  description = "Wether logging config enabled"
+}
+
+variable "log_include_cookies" {
+  default     = "false"
+  description = "Include cookies in access logs"
+}
+
+variable "log_bucket_domain_name" {
+  default     = ""
+  description = "S3 bucket domain name for logs"
+}
+
+variable "log_prefix" {
+  default     = ""
+  description = "Path of logs in S3 bucket"
+}
