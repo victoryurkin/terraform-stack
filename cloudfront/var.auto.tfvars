@@ -3,7 +3,7 @@ aws_region  = "us-east-1"
 environment = "prod"
 
 # General
-aliases                           = ["baseline.aetion.com"]
+aliases                           = []
 default_root_object               = "index.html"
 price_class                       = "PriceClass_All"
 
