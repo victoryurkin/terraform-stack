@@ -12,10 +12,6 @@ origins = [{
     id          = "main"
 }]
 
-behaviors = {
-    default = {
-        target_origin_id       = "main"
-        viewer_protocol_policy = "redirect-to-https"
-    }
-    ordered = []
-}
+default_behavior_target_origin_id = "main"
+default_behavior_viewer_protocol_policy = "redirect-to-https"
+

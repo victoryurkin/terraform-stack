@@ -26,5 +26,7 @@ module "cloudfront" {
   aliases                = var.aliases
   log_bucket_domain_name = var.log_bucket_domain_name
   origins                = var.origins
-  behaviors              = var.behaviors
+
+  default_behavior_target_origin_id = var.default_behavior_target_origin_id
+  default_behavior_viewer_protocol_policy = var.default_behavior_viewer_protocol_policy
 }

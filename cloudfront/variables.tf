@@ -43,7 +43,12 @@ variable "origins" {
   description = "(Required) - List of origin objects"
 }
 
-variable "behaviors" {
-  type        = object
-  description = "(Required) - List of origin objects"
+variable "default_behavior_target_origin_id" {
+  type        = string
+  description = "(Required) - Default behavior target origin id"
+}
+
+variable "default_behavior_viewer_protocol_policy" {
+  type        = string
+  description = "(Required) - Default behavior viewer protocol policy"
 }
