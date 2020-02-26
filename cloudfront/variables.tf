@@ -32,12 +32,12 @@ variable "aliases" {
 ########################################################
 
 variable "origins" {
-  type = list(object)
+  type = list
   description = "List of origin objects"
 }
 
 variable "default_origin_ssl_protocols" {
-  type        = list(string)
+  type        = list
   description = "The SSL/TLS protocols that you want CloudFront to use when communicating with your origin over HTTPS"  
   default     = ["TLSv1", "TLSv1.1", "TLSv1.2"]
 }
@@ -61,7 +61,7 @@ variable "default_origin_keepalive_timeout" {
 }
 
 variable "default_origin_http_port" {
-  type        number
+  type        = number
   description = "The HTTP port the custom origin listens on"
   default     = 80
 }
