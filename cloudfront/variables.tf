@@ -36,6 +36,7 @@ variable "aliases" {
 variable "log_bucket_domain_name" {
   type        = string
   description = "(Required) - S3 bucket domain name for logs"
+  default     = ""
 }
 
 variable "origins" {
