@@ -16,7 +16,7 @@ provider "aws" {
 
 module "cloudfront" {
   source  = "app.terraform.io/victoryurkinpersonal/cloudfront/aws"
-  version = "1.0.31"
+  version = "1.0.32"
 
   client_name = var.client_name
   environment = var.environment
@@ -52,11 +52,13 @@ module "cloudfront" {
       path_pattern           = "apps/*"
       target_origin_id       = "apps"
       viewer_protocol_policy = "https-only"
+      allowed_methods        = ["GET", "HEAD", "OPTIONS"]
     },
     {
       path_pattern           = "aetion-webapp/rest/*"
       target_origin_id       = "webapp"
       viewer_protocol_policy = "https-only"
+      allowed_methods        = ["GET", "HEAD", "OPTIONS", "PUT", "POST", "PATCH", "DELETE"]
     }
   ]
 }
