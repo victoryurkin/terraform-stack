@@ -49,12 +49,14 @@ module "cloudfront" {
 
   ordered_behaviors = [
     {
-      path_pattern     = "apps/*"
-      target_origin_id = "apps"
+      path_pattern           = "apps/*"
+      target_origin_id       = "apps"
+      viewer_protocol_policy = "https-only"
     },
     {
-      path_pattern     = "aetion-webapp/rest/*"
-      target_origin_id = "webapp"
+      path_pattern           = "aetion-webapp/rest/*"
+      target_origin_id       = "webapp"
+      viewer_protocol_policy = "https-only"
     }
   ]
 }
