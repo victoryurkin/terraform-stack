@@ -8,19 +8,8 @@ aliases = []
 default_behavior_target_origin_id = "main"
 default_behavior_viewer_protocol_policy = "redirect-to-https"
 
-origins = [
-    {
-        domain_name = "%frontend_s3_bucket%"
-        path        = "/main/1.0.0(1)"
-        id          = "main"
-    },
-    {
-        domain_name = "%frontend_s3_bucket%"
-        id          = "apps"
-    },
-    {
-        domain_name = "baseline.aetion.com"
-        id          = "webapp"
-    }
-]
-
+origin_main_path          = "/main/1.0.0(1)"
+origin_main_id            = "main"
+origin_apps_id            = "apps"
+origin_webapp_domain_name = "baseline.aetion.com"
+origin_webapp_id          = "webapp"
