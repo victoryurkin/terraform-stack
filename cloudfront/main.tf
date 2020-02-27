@@ -46,4 +46,15 @@ module "cloudfront" {
       id          = var.origin_webapp_id
     }
   ]
+
+  ordered_behaviors = [
+    {
+      path_pattern     = "apps/*"
+      target_origin_id = "apps"
+    },
+    {
+      path_pattern     = "aetion-webapp/rest/*"
+      target_origin_id = "webapp"
+    }
+  ]
 }
