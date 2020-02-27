@@ -16,7 +16,7 @@ provider "aws" {
 
 module "cloudfront" {
   source  = "app.terraform.io/victoryurkinpersonal/cloudfront/aws"
-  version = "1.0.28"
+  version = "1.0.29"
 
   client_name = var.client_name
   environment = var.environment
@@ -24,6 +24,7 @@ module "cloudfront" {
 
   # CloudFront distribution config
   aliases                = var.aliases
+  log_bucket_domain_name = data.terraform_remote_state.dependencies.outputs.s3_bucket_domain_name
   origins                = var.origins
 
   default_behavior_target_origin_id = var.default_behavior_target_origin_id
