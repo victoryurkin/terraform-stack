@@ -18,5 +18,9 @@ module "lambda" {
   source  = "app.terraform.io/victoryurkinpersonal/lambda/aws"
   version = "1.0.0"
 
+  client_name = var.client_name
+  environment = var.environment
+  aws_region  = var.aws_region
+
   function_name = "front-end-config"
 }
