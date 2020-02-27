@@ -26,24 +26,24 @@ module "cloudfront" {
   aliases                = var.aliases
   log_bucket_domain_name = data.terraform_remote_state.dependencies.outputs.s3_bucket_domain_name
 
-  default_behavior_target_origin_id = var.default_behavior_target_origin_id
-  cache_behavior_viewer_protocol_policy_default = var.default_behavior_viewer_protocol_policy
+  default_behavior_target_origin_id = "main"
+  cache_behavior_viewer_protocol_policy_default = "redirect-to-https"
 
   origins = [
     {
       domain_name = data.terraform_remote_state.dependencies.outputs.s3_bucket_domain_name
-      path        = var.origin_main_path
-      id          = var.origin_main_id
+      path        = "/main/1.0.0(1)"
+      id          = "main"
     },
     {
       domain_name = data.terraform_remote_state.dependencies.outputs.s3_bucket_domain_name
       path        = ""
-      id          = var.origin_apps_id
+      id          = "apps"
     },
     {
       domain_name = var.origin_webapp_domain_name
       path        = ""
-      id          = var.origin_webapp_id
+      id          = "webapp"
     }
   ]
 
