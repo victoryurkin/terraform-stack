@@ -25,8 +25,16 @@ module "cloudfront" {
   # CloudFront distribution config
   aliases                = var.aliases
   log_bucket_domain_name = data.terraform_remote_state.dependencies.outputs.s3_bucket_domain_name
-  origins                = var.origins
 
   default_behavior_target_origin_id = var.default_behavior_target_origin_id
   cache_behavior_viewer_protocol_policy_default = var.default_behavior_viewer_protocol_policy
+
+  dynamic "origins" {
+    for_each = var.origins
+    content {
+        domain_name = each.value.domain_name == "%frontend_s3_bucket%" ? data.terraform_remote_state.dependencies.outputs.s3_bucket_domain_name : each.value.domain_name
+        path        = lookup(each.value, "path", null)
+        id          = lookup(each.value, "id", null)
+    }
+  }
 }
