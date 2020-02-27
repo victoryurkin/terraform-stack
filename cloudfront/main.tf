@@ -29,19 +29,19 @@ module "cloudfront" {
   default_behavior_target_origin_id = var.default_behavior_target_origin_id
   cache_behavior_viewer_protocol_policy_default = var.default_behavior_viewer_protocol_policy
 
-  origins = [
-    {
-      domain_name = data.terraform_remote_state.dependencies.outputs.s3_bucket_domain_name
-      path        = var.origin_main_path
-      id          = var.origin_main_id
-    },
-    {
-      domain_name = data.terraform_remote_state.dependencies.outputs.s3_bucket_domain_name
-      id          = var.origin_apps_id
-    },
-    {
-      domain_name = var.origin_webapp_domain_name
-      id          = var.origin_webapp_id
-    }
-  ]
+  origins {
+    domain_name = data.terraform_remote_state.dependencies.outputs.s3_bucket_domain_name
+    path        = var.origin_main_path
+    id          = var.origin_main_id
+  }
+
+  origins {
+    domain_name = data.terraform_remote_state.dependencies.outputs.s3_bucket_domain_name
+    id          = var.origin_apps_id
+  }
+
+  origins {
+    domain_name = var.origin_webapp_domain_name
+    id          = var.origin_webapp_id
+  }
 }
