@@ -34,6 +34,16 @@ module "cloudfront" {
       domain_name = data.terraform_remote_state.dependencies.outputs.s3_bucket_domain_name
       path        = var.origin_main_path
       id          = var.origin_main_id
+    },
+    {
+      domain_name = data.terraform_remote_state.dependencies.outputs.s3_bucket_domain_name
+      path        = ""
+      id          = var.origin_apps_id
+    },
+    {
+      domain_name = var.origin_webapp_domain_name
+      path        = ""
+      id          = var.origin_webapp_id
     }
   ]
 }
