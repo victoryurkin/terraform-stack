@@ -16,12 +16,14 @@ provider "aws" {
 
 module "lambda" {
   source  = "app.terraform.io/victoryurkinpersonal/lambda/aws"
-  version = "1.0.1"
+  version = "1.0.2"
 
   client_name = var.client_name
   environment = var.environment
   aws_region  = var.aws_region
 
   function_name = "front-end-config"
-  handler       = "index.js"
+  handler       = "index.handler"
+  runtime       = "nodejs12.x"
+  role          = ""
 }
