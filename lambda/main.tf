@@ -23,4 +23,5 @@ module "lambda" {
   aws_region  = var.aws_region
 
   function_name = "front-end-config"
+  handler       = "index.js"
 }
