@@ -16,7 +16,7 @@ provider "aws" {
 
 module "lambda" {
   source  = "app.terraform.io/victoryurkinpersonal/lambda/aws"
-  version = "1.0.12"
+  version = "1.0.13"
 
   client_name = var.client_name
   environment = var.environment
