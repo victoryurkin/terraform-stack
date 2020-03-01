@@ -34,7 +34,7 @@ EOF
 
 module "lambda" {
   source  = "app.terraform.io/victoryurkinpersonal/lambda/aws"
-  version = "1.0.5"
+  version = "1.0.6"
 
   client_name = var.client_name
   environment = var.environment
@@ -44,7 +44,4 @@ module "lambda" {
   handler       = "index.handler"
   runtime       = "nodejs12.x"
   role          = "test"
-
-  filename         = "${data.archive_file.lambda_zip_inline.output_path}"
-  source_code_hash = "${data.archive_file.lambda_zip_inline.output_base64sha256}"  
 }
