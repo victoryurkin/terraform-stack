@@ -14,9 +14,27 @@ provider "aws" {
   profile                 = var.profile
 }
 
+data "archive_file" "lambda_zip_inline" {
+  type        = "zip"
+  output_path = "/tmp/lambda_zip_inline.zip"
+  source {
+    content  = <<EOF
+exports.handler = async (event) => {
+    // TODO implement
+    const response = {
+        statusCode: 200,
+        body: JSON.stringify('Hello from Lambda!'),
+    };
+    return response;
+};
+EOF
+    filename = "index.js"
+  }
+}
+
 module "lambda" {
   source  = "app.terraform.io/victoryurkinpersonal/lambda/aws"
-  version = "1.0.4"
+  version = "1.0.5"
 
   client_name = var.client_name
   environment = var.environment
@@ -26,4 +44,7 @@ module "lambda" {
   handler       = "index.handler"
   runtime       = "nodejs12.x"
   role          = "test"
+
+  filename         = "${data.archive_file.lambda_zip_inline.output_path}"
+  source_code_hash = "${data.archive_file.lambda_zip_inline.output_base64sha256}"  
 }
