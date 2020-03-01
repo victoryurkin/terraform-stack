@@ -25,5 +25,4 @@ module "lambda" {
   function_name = "front-end-config"
   handler       = "index.handler"
   runtime       = "nodejs12.x"
-  role          = "test"
 }
