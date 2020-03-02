@@ -38,11 +38,6 @@ variable "description" {
   description = "(Required) - API Gateway description"
 }
 
-variable "path_parts" {
-  type        = list
-  description = "(Required) - The list of resource paths"
-}
-
 variable "http_methods" {
   type        = list
   description = "(Required) - The list of methods"
