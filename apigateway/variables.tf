@@ -59,11 +59,11 @@ variable "integration_uri" {
 }
 
 variable "status_code" {
-  type        = string
+  type        = number
   description = "(Required) - Status code"
 }
 
 variable "response_models" {
-  type        = string
+  type        = list
   description = "(Required) - Response models"
 }
