@@ -16,15 +16,21 @@ provider "aws" {
 
 module "apigateway" {
   source  = "app.terraform.io/victoryurkinpersonal/apigateway/aws"
-  version = "1.0.6"
+  version = "1.0.7"
 
   client_name = var.client_name
   environment = var.environment
   aws_region  = var.aws_region
 
   # API Gateway config
-  name            = var.name
-  description     = var.description
-  http_methods    = var.http_methods
-  authorizations  = var.authorizations
+  name        = var.name
+  description = var.description
+  
+  # Api Gateway Method
+  http_method   = var.http_method
+  authorization = var.authorization
+
+  # Api Gateway Integration
+  integration_type          = var.integration_type
+  integration_function_name = var.integration_function_name
 }

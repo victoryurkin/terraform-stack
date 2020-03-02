@@ -35,15 +35,25 @@ variable "name" {
 
 variable "description" {
   type        = string
-  description = "(Required) - API Gateway description"
+  description = "(Required) - API Gateway name."
 }
 
-variable "http_methods" {
-  type        = list
-  description = "(Required) - The list of methods"
+variable "http_method" {
+  type        = string
+  description = "(Required) - HTTP method"
 }
 
-variable "authorizations" {
-  type        = list
-  description = "(Required) - The list of authorizations of http methods"
+variable "authorization" {
+  type        = string
+  description = "(Required) - Authorization of HTTP method"
+}
+
+variable "integration_type" {
+  type        = string
+  description = "(Required) - Integration type"
+}
+
+variable "integration_function_name" {
+  type        = string
+  description = "(Required) - Integration function name"
 }
