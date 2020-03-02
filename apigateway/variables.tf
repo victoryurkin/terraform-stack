@@ -47,3 +47,8 @@ variable "http_methods" {
   type        = list
   description = "(Required) - The list of methods"
 }
+
+variable "authorizations" {
+  type        = list
+  description = "(Required) - The list of authorizations of http methods"
+}
