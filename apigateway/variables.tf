@@ -57,3 +57,13 @@ variable "integration_uri" {
   type        = string
   description = "(Required) - Integration URI"
 }
+
+variable "status_code" {
+  type        = string
+  description = "(Required) - Status code"
+}
+
+variable "response_models" {
+  type        = string
+  description = "(Required) - Response models"
+}
