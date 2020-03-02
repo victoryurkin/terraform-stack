@@ -37,3 +37,8 @@ variable "description" {
   type        = string
   description = "(Required) - API Gateway description"
 }
+
+variable "path_parts" {
+  type        = list
+  description = "(Required) - The list of resource paths"
+}
