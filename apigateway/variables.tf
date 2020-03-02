@@ -53,7 +53,7 @@ variable "integration_type" {
   description = "(Required) - Integration type"
 }
 
-variable "integration_function_name" {
+variable "integration_uri" {
   type        = string
-  description = "(Required) - Integration function name"
+  description = "(Required) - Integration URI"
 }
