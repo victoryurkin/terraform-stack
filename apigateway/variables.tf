@@ -64,6 +64,7 @@ variable "status_code" {
 }
 
 variable "response_models" {
-  type        = list(object)
+  type        = list
   description = "(Required) - Response models"
+  default     = []
 }
