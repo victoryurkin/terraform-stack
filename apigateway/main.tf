@@ -25,4 +25,5 @@ module "apigateway" {
   # API Gateway config
   name        = var.name
   description = var.description
+  path_parts  = var.path_parts
 }
