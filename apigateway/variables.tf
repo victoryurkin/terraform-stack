@@ -66,5 +66,9 @@ variable "status_code" {
 variable "response_models" {
   type        = list
   description = "(Required) - Response models"
-  default     = []
+}
+
+variable "stage_name" {
+  type        = string
+  description = "(Required) - Stage name"
 }

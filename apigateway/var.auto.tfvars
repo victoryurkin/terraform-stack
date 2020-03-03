@@ -13,3 +13,5 @@ integration_uri  = "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/function
 
 status_code         = 200
 response_models     = [{ "application/json" = "Empty" }]
+
+stage_name = "config"

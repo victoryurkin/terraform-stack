@@ -16,7 +16,7 @@ provider "aws" {
 
 module "apigateway" {
   source  = "app.terraform.io/victoryurkinpersonal/apigateway/aws"
-  version = "1.0.19"
+  version = "1.0.20"
 
   client_name = var.client_name
   environment = var.environment
@@ -37,4 +37,7 @@ module "apigateway" {
   # Api Gateway Response
   status_code         = var.status_code
   response_models     = var.response_models
+
+  # Api Gateway Deployment
+  stage_name = var.stage_name
 }
