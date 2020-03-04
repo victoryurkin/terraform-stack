@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "$id$",
+  "description": "FrontEndConfigSchema",
+  "type": "object",
+  "additionalProperties": false,
+  "patternProperties": {
+      "[^\\s]+$": {
+          "type": ["array", "boolean", "integer", "null", "number", "object", "string"]
+      }
+  },
+  "minProperties": 1
+}
