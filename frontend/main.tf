@@ -16,7 +16,7 @@ provider "aws" {
 
 module "frontend" {
   source  = "app.terraform.io/victoryurkinpersonal/frontend/aws"
-  version = "1.0.0"
+  version = "1.0.1"
 
   client_name = var.client_name
   environment = var.environment
