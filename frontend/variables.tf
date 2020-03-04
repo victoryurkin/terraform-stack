@@ -28,7 +28,18 @@ variable profile {
 # API Gateway
 ########################################################
 
-variable "domain" {
+variable "stack_name" {
   type        = string
-  description = "(Required) - Environemnt domain name"
+  description = "(Optional) - Cloudformation stack name"
+  default     = ""
+}
+
+variable "name" {
+  type        = string
+  description = "(Required) - Document name"
+}
+
+variable "type" {
+  type        = string
+  description = "(Required) - Document type"
 }
