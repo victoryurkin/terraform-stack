@@ -15,7 +15,7 @@ data "terraform_remote_state" "dependencies_apigateway" {
   config = {
     organization = "victoryurkinpersonal"
     workspaces = {
-      name = "terraform-appigateway"
+      name = "terraform-apigateway"
     }
   }
 }
