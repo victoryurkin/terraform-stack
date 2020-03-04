@@ -6,5 +6,8 @@ data "terraform_remote_state" "dependencies" {
     workspaces = {
       name = "terraform-s3"
     }
+    workspaces = {
+      name = "terraform-apigateway"
+    }
   }
 }
