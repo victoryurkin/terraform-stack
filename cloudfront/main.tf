@@ -24,19 +24,19 @@ module "cloudfront" {
 
   # CloudFront distribution config
   aliases                = var.aliases
-  log_bucket_domain_name = data.terraform_remote_state.dependencies.outputs.frontend_s3_bucket_domain_name
+  log_bucket_domain_name = data.terraform_remote_state.dependencies_s3.outputs.frontend_s3_bucket_domain_name
 
   default_behavior_target_origin_id = "main"
   cache_behavior_viewer_protocol_policy_default = "redirect-to-https"
 
   origins = [
     {
-      domain_name = data.terraform_remote_state.dependencies.outputs.frontend_s3_bucket_domain_name
+      domain_name = data.terraform_remote_state.dependencies_s3.outputs.frontend_s3_bucket_domain_name
       path        = "/main/1.0.0(1)"
       id          = "main"
     },
     {
-      domain_name = data.terraform_remote_state.dependencies.outputs.frontend_s3_bucket_domain_name
+      domain_name = data.terraform_remote_state.dependencies_s3.outputs.frontend_s3_bucket_domain_name
       path        = ""
       id          = "apps"
     },
@@ -46,7 +46,7 @@ module "cloudfront" {
       id          = "webapp"
     },
     {
-      domain_name = data.terraform_remote_state.dependencies.outputs.frontend_config_api_gateway_invoke_url
+      domain_name = data.terraform_remote_state.dependencies_apigateway.outputs.frontend_config_api_gateway_invoke_url
       path        = ""
       id          = "config"
     }
