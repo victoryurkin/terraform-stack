@@ -44,6 +44,11 @@ module "cloudfront" {
       domain_name = var.origin_webapp_domain_name
       path        = ""
       id          = "webapp"
+    },
+    {
+      domain_name = data.terraform_remote_state.dependencies.outputs.frontend_config_api_gateway_invoke_url
+      path        = ""
+      id          = "config"
     }
   ]
 
@@ -65,6 +70,15 @@ module "cloudfront" {
       forward_headers        = ["*"]
       forward_cookies        = "all"
       forward_query_string   = "true"
+    },
+    {
+      path_pattern           = "config"
+      target_origin_id       = "config"
+      viewer_protocol_policy = "https-only"
+      allowed_methods        = ["GET", "HEAD", "OPTIONS"]
+      forward_headers        = []
+      forward_cookies        = "none"
+      forward_query_string   = "false"
     }
   ]
 }
