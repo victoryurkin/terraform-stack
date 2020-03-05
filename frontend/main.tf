@@ -25,10 +25,7 @@ module "ssmdocument" {
   aws_region  = var.aws_region
 
   # FrontEnd Config
-  stack_name = var.stack_name
-  name       = var.name
-  type       = var.type
-  content    = data.local_file.schema.content
+  document = var.document
 }
 */
 
@@ -42,7 +39,5 @@ module "appconfig" {
   aws_region  = var.aws_region
 
   # AppConfig
-  application {
-    
-  }
+  environment = var.environment
 }

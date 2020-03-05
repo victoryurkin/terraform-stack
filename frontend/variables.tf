@@ -28,18 +28,14 @@ variable profile {
 # API Gateway
 ########################################################
 
-variable "stack_name" {
-  type        = string
-  description = "(Optional) - Cloudformation stack name"
-  default     = ""
+variable document {
+  type        = map
+  description = "(Optional) - SSM Document"
+  default     = {}
 }
 
-variable "name" {
-  type        = string
-  description = "(Required) - Document name"
-}
-
-variable "type" {
-  type        = string
-  description = "(Required) - Document type"
+variable environment {
+  type        = map
+  description = "(Optional) - AppConfig environment"
+  default     = {}
 }
