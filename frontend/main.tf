@@ -46,4 +46,5 @@ module "appconfig" {
   configuration_profile = merge({
     application_id = format("%s", data.aws_cloudformation_export.application_id.value)
   }, var.configuration_profile)
+  
 }
