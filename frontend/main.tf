@@ -39,5 +39,5 @@ module "appconfig" {
   aws_region  = var.aws_region
 
   # AppConfig
-  appconfig_environment = var.appconfig_environment
+  appconfig_environment = merge({application_id = format("%s", "erurher")}, var.appconfig_environment)
 }
