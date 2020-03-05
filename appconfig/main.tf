@@ -24,4 +24,5 @@ module "appconfig" {
 
   application         = var.application
   deployment_strategy = var.deployment_strategy
+  
 }
