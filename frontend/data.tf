@@ -1,3 +1,3 @@
-data "local_file" "schema" {
-    filename = "${path.module}/config.json"
+data "aws_cloudformation_export" "application_id" {
+  name = "appconfig-application-front-end-config-stack-appconfig-application"
 }

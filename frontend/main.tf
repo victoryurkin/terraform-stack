@@ -32,12 +32,12 @@ module "ssmdocument" {
 # AWS AppConfig environment
 module "appconfig" {
   source  = "app.terraform.io/victoryurkinpersonal/appconfig/aws"
-  version = "1.0.16"
+  version = "1.0.17"
 
   client_name = var.client_name
   environment = var.environment
   aws_region  = var.aws_region
 
   # AppConfig
-  appconfig_environment = merge({application_id = format("%s", "erurher")}, var.appconfig_environment)
+  appconfig_environment = merge({application_id = format("%s", data.aws_cloudformation_export.application_id.value)}, var.appconfig_environment)
 }
