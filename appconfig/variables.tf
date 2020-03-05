@@ -27,3 +27,9 @@ variable profile {
 ########################################################
 # AppConfig
 ########################################################
+
+variable application {
+  description = "Application Object"
+  type        = map
+  default     = null
+}
