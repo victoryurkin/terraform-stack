@@ -34,7 +34,7 @@ variable document {
   default     = {}
 }
 
-variable environment {
+variable appconfig_environment {
   type        = map
   description = "(Optional) - AppConfig environment"
   default     = {}

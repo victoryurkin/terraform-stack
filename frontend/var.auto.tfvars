@@ -9,7 +9,7 @@ document = {
     content    = "{}"
 }
 
-environment = {
+appconfig_environment = {
     stack_name  = "front-end-config-stack-appconfig-environment-baseline"
     name        = "baseline.aetion.com"
     description = "AppConfig environment"
