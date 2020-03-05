@@ -16,8 +16,8 @@ appconfig_environment = {
 }
 
 configuration_profile = {
-    stack_name  = "front-end-config-stack-appconfig-configuration-profile-baseline"
-    name        = "baseline.aetion.com"
-    description = "AppConfig configuration profile"
+    stack_name   = "front-end-config-stack-appconfig-configuration-profile-baseline"
+    name         = "baseline.aetion.com"
+    description  = "AppConfig configuration profile"
     location_uri = "ssm-document://baseline.aetion.com"
 }
