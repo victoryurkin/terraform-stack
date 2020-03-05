@@ -14,3 +14,9 @@ appconfig_environment = {
     name        = "baseline.aetion.com"
     description = "AppConfig environment"
 }
+
+configuration_profile = {
+    stack_name  = "front-end-config-stack-appconfig-configuration-profile-baseline"
+    name        = "baseline.aetion.com"
+    description = "AppConfig configuration profile"
+}

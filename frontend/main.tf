@@ -40,4 +40,7 @@ module "appconfig" {
 
   # AppConfig
   appconfig_environment = merge({application_id = format("%s", data.aws_cloudformation_export.application_id.value)}, var.appconfig_environment)
+  configuration_profile = merge({
+    application_id = format("%s", data.aws_cloudformation_export.application_id.value)
+  }, var.configuration_profile)
 }

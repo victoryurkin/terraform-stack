@@ -39,3 +39,9 @@ variable appconfig_environment {
   description = "(Optional) - AppConfig environment"
   default     = {}
 }
+
+variable configuration_profile {
+  description = "Configuration Profile Object"
+  type        = map
+  default     = {}
+}
