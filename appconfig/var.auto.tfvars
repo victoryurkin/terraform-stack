@@ -2,6 +2,12 @@ client_name  = "baseline"
 aws_region  = "us-east-1"
 environment = "prod"
 
+document_schema = {
+    stack_name = "front-end-config-stack-ssm-document-schema"
+    name       = "front-end-config-schema"
+    type       = "ApplicationConfigurationSchema"
+}
+
 application = {
     stack_name  = "front-end-config-stack-appconfig-application"
     name        = "front-end-config"

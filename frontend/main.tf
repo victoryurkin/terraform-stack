@@ -15,6 +15,7 @@ provider "aws" {
 }
 
 # SSM Document
+# aws ssm create-document --document-type ApplicationConfigurationSchema --name frontend_config_schema --content file://schema.json --region us-west-2
 /*
 module "ssmdocument" {
   source  = "app.terraform.io/victoryurkinpersonal/ssmdocument/aws"

@@ -28,6 +28,12 @@ variable profile {
 # AppConfig
 ########################################################
 
+variable document_schema {
+  description = "SSM Document by ApplicationConfigurationSchema type"
+  type        = map
+  default     = {}
+}
+
 variable application {
   description = "Application Object"
   type        = map
