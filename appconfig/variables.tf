@@ -31,5 +31,11 @@ variable profile {
 variable application {
   description = "Application Object"
   type        = map
-  default     = null
+  default     = {}
+}
+
+variable deployment_strategy {
+  description = "Deployment Strategy Object"
+  type        = map
+  default     = {}
 }

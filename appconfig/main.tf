@@ -16,11 +16,13 @@ provider "aws" {
 
 module "appconfig" {
   source  = "app.terraform.io/victoryurkinpersonal/appconfig/aws"
-  version = "1.0.10"
+  version = "1.0.11"
 
   client_name = var.client_name
   environment = var.environment
   aws_region  = var.aws_region
 
-  application = var.application
+  application         = var.application
+  deployment_strategy = var.deployment_strategy
+  
 }
