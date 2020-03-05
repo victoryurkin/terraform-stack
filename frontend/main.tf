@@ -15,7 +15,9 @@ provider "aws" {
 }
 
 # SSM Document
-# aws ssm create-document --document-type ApplicationConfigurationSchema --name frontend_config_schema --content file://schema.json --region us-west-2
+# CloudFormation is not available yet, use the following command for manual creation
+# aws ssm create-document --document-type ApplicationConfiguration --name baseline.aetion.com --content "{\"config\": {}}" --requires Name=front-end-config-schema --profile personal --region us-east-1
+
 /*
 module "ssmdocument" {
   source  = "app.terraform.io/victoryurkinpersonal/ssmdocument/aws"
@@ -33,7 +35,7 @@ module "ssmdocument" {
 # AWS AppConfig environment
 module "appconfig" {
   source  = "app.terraform.io/victoryurkinpersonal/appconfig/aws"
-  version = "1.0.17"
+  version = "1.0.26"
 
   client_name = var.client_name
   environment = var.environment
