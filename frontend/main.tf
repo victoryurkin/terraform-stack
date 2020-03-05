@@ -16,7 +16,7 @@ provider "aws" {
 
 module "ssmdocument" {
   source  = "app.terraform.io/victoryurkinpersonal/ssmdocument/aws"
-  version = "1.0.7"
+  version = "1.0.8"
 
   client_name = var.client_name
   environment = var.environment
