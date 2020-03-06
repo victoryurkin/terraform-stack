@@ -39,7 +39,7 @@ module "role" {
   role_name   = var.role.role_name
   service     = var.role.service
   policy_name = var.role.policy_name
-  statements  = var.role.statements
+  statements  = var.role_statements
   
 }
 

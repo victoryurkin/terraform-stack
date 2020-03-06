@@ -40,6 +40,12 @@ variable role {
   default     = {}
 }
 
+variable role_statements {
+  description = "Policy statements"
+  type        = list
+  default     = []
+}
+
 variable application {
   description = "Application Object"
   type        = map
