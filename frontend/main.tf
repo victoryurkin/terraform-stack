@@ -35,7 +35,7 @@ module "ssmdocument" {
 # AWS AppConfig environment
 module "appconfig" {
   source  = "app.terraform.io/victoryurkinpersonal/appconfig/aws"
-  version = "1.0.36"
+  version = "1.0.37"
 
   client_name = var.client_name
   environment = var.environment
@@ -48,7 +48,6 @@ module "appconfig" {
     role_arn       = data.terraform_remote_state.dependencies_role.outputs.frontend_appconfig_role
   }, var.configuration_profile)
 }
-
 
 module "cloudfront" {
   source  = "app.terraform.io/victoryurkinpersonal/cloudfront/aws"
