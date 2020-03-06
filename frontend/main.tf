@@ -45,8 +45,8 @@ module "appconfig" {
   appconfig_environment = merge({application_id = format("%s", data.aws_cloudformation_export.application_id.value)}, var.appconfig_environment)
   configuration_profile = merge({
     application_id = format("%s", data.aws_cloudformation_export.application_id.value)
+    role_arn       = data.terraform_remote_state.dependencies_role.outputs.frontend_appconfig_role
   }, var.configuration_profile)
-  
 }
 
 
