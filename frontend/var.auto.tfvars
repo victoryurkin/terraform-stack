@@ -21,3 +21,7 @@ configuration_profile = {
     description  = "AppConfig configuration profile"
     location_uri = "ssm-document://baseline.aetion.com"
 }
+
+# Cloudfront
+aliases                   = []
+origin_webapp_domain_name = "baseline-webapp.aetion.com"
