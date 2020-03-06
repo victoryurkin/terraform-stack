@@ -30,7 +30,7 @@ module "ssmdocument" {
 
 module "role" {
   source  = "app.terraform.io/victoryurkinpersonal/role/aws"
-  version = "1.0.1"
+  version = "1.0.2"
 
   client_name = var.client_name
   environment = var.environment
