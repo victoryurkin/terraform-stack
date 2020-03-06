@@ -31,7 +31,7 @@ module "ssmdocument" {
 
 module "appconfig" {
   source  = "app.terraform.io/victoryurkinpersonal/appconfig/aws"
-  version = "1.0.39"
+  version = "1.0.41"
 
   client_name         = var.organization_name
   aws_region          = var.aws_region
