@@ -28,9 +28,24 @@ module "ssmdocument" {
   content    = data.local_file.document_schema.content
 }
 
+module "role" {
+  source  = "app.terraform.io/victoryurkinpersonal/role/aws"
+  version = "1.0.1"
+
+  client_name = var.client_name
+  environment = var.environment
+  aws_region  = var.aws_region
+
+  role_name   = var.role.role_name
+  service     = var.role.service
+  policy_name = var.role.policy_name
+  statements  = var.role.statements
+  
+}
+
 module "appconfig" {
   source  = "app.terraform.io/victoryurkinpersonal/appconfig/aws"
-  version = "1.0.36"
+  version = "1.0.37"
 
   client_name = var.client_name
   environment = var.environment

@@ -34,6 +34,12 @@ variable document_schema {
   default     = {}
 }
 
+variable role {
+  description = "Role for AppConfig to get SSM Document"
+  type        = map
+  default     = {}
+}
+
 variable application {
   description = "Application Object"
   type        = map
