@@ -1,43 +1,21 @@
-client_name  = "baseline"
-aws_region  = "us-east-1"
-environment = "prod"
+aws_region          = "us-east-1"
+environment         = "prod"
+organization_name   = "aetion"
+provisioning        = "terraform"
+defcon_level        = 0
+propagate_at_launch = true
 
-document_schema = {
-    stack_name = "front-end-config-stack-ssm-document-schema"
-    name       = "front-end-config-schema"
-    type       = "ApplicationConfigurationSchema"
-}
+application_stack_name  = "front-end-config-stack-appconfig-application"
+application_name        = "front-end-config"
+application_description = "Front-end applications configuration"
 
-role = {
-    role_name   = "front-end-config-iam-appconfig-role"
-    service     = "ssm.amazonaws.com"
-    policy_name = "front-end-config-iam-appconfig-policy"
-}
-role_statements  = [
-    {
-        Action   = ["ssm:GetDocument"]
-        Effect   = "Allow"
-        Resource = "arn:aws:ssm:*:*:document/*"
-    }
-]
+deployment_strategy_stack_name          = "front-end-config-stack-appconfig-deployment-strategy"
+deployment_strategy_name                = "front-end-config-deployment-strategy"
+deployment_strategy_description         = "Deployment strategy for front-end-config application environments"
 
-application = {
-    stack_name  = "front-end-config-stack-appconfig-application"
-    name        = "front-end-config"
-    description = "Front-end applications configuration"
-}
+role_name        = "front-end-config-iam-appconfig-role"
+role_policy_name = "front-end-config-iam-appconfig-policy"
+role_actions     = ["ssm:GetDocument"]
 
-deployment_strategy = {
-    stack_name          = "front-end-config-stack-appconfig-deployment-strategy"
-    name                = "front-end-config-deployment-strategy"
-    description         = "Deployment strategy for front-end-config application environments"
-    growth_type         = "LINEAR"
-    growth_factor       = "10.0"
-    deployment_duration = "1.0"
-    bake_time           = "1.0"
-    replicate           = "NONE"
-
-}
-
-
-        
+document_stack_name = "front-end-config-stack-ssm-document-schema"
+document_name       = "front-end-config-schema"
