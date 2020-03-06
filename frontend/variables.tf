@@ -25,7 +25,7 @@ variable profile {
 }
 
 ########################################################
-# API Gateway
+# AppConfig
 ########################################################
 
 variable document {
@@ -44,4 +44,18 @@ variable configuration_profile {
   description = "Configuration Profile Object"
   type        = map
   default     = {}
+}
+
+########################################################
+# CloudFront
+########################################################
+
+variable "aliases" {
+  type        = list
+  description = "(Required) - List of aliases. CAUTION! Names MUSTN'T contain trailing `.`"
+}
+
+variable "origin_webapp_domain_name" {
+  type        = string
+  description = "(Required) - webapp origin domain name"
 }
