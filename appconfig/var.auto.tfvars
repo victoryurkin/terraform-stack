@@ -15,7 +15,7 @@ role = {
 }
 role_statements  = [
     {
-        Actions  = ["ssm:GetDocument"]
+        Action   = ["ssm:GetDocument"]
         Effect   = "Allow"
         Resource = "arn:aws:ssm:*:*:document/*"
     }
