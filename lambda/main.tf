@@ -14,7 +14,7 @@ provider "aws" {
 
 module "lambda" {
   source  = "app.terraform.io/victoryurkinpersonal/lambda/aws"
-  version = "1.0.24"
+  version = "1.0.25"
 
   client_name         = var.organization_name
   aws_region          = var.aws_region
@@ -26,6 +26,10 @@ module "lambda" {
   function_name = var.function_name
   handler       = var.handler
   runtime       = var.runtime
+  environment_variables = {
+    "APPLICATION_ID" = data.aws_cloudformation_export.application_id.value
+    "CLIENT_ID" = var.appconfig_client_id
+  }
 
   role_name        = var.role_name
   role_policy_name = var.role_policy_name

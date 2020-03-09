@@ -6,9 +6,10 @@ defcon_level        = 0
 propagate_at_launch = true
 
 # Lambda
-function_name = "front-end-config"
-handler       = "index.handler"
-runtime       = "nodejs12.x"
+function_name       = "front-end-config"
+handler             = "index.handler"
+runtime             = "nodejs12.x"
+appconfig_client_id = "front-end-config"
 
 #Role
 role_name        = "front-end-config-iam-lambda-role"
