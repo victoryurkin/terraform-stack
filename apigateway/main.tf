@@ -10,17 +10,18 @@ terraform {
 
 provider "aws" {
   region                  = var.aws_region
-  shared_credentials_file = var.shared_credentials_file
-  profile                 = var.profile
 }
 
 module "apigateway" {
   source  = "app.terraform.io/victoryurkinpersonal/apigateway/aws"
   version = "1.0.22"
 
-  client_name = var.client_name
-  environment = var.environment
-  aws_region  = var.aws_region
+  client_name         = var.organization_name
+  aws_region          = var.aws_region
+  environment         = var.environment
+  provisioning        = var.provisioning
+  defcon_level        = var.defcon_level
+  propagate_at_launch = var.propagate_at_launch
 
   # API Gateway config
   name        = var.name

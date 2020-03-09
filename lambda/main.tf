@@ -10,19 +10,24 @@ terraform {
 
 provider "aws" {
   region                  = var.aws_region
-  shared_credentials_file = var.shared_credentials_file
-  profile                 = var.profile
 }
 
 module "lambda" {
   source  = "app.terraform.io/victoryurkinpersonal/lambda/aws"
-  version = "1.0.20"
+  version = "1.0.22"
 
-  client_name = var.client_name
-  environment = var.environment
-  aws_region  = var.aws_region
+  client_name         = var.organization_name
+  aws_region          = var.aws_region
+  environment         = var.environment
+  provisioning        = var.provisioning
+  defcon_level        = var.defcon_level
+  propagate_at_launch = var.propagate_at_launch
 
-  function_name = "front-end-config"
+  function_name = var.function_name"front-end-config"
   handler       = "index.handler"
   runtime       = "nodejs12.x"
+
+  role_name        = var.role_name
+  role_policy_name = var.role_policy_name
+  role_statements  = var.role_statements
 }
