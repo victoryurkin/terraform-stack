@@ -9,12 +9,12 @@ terraform {
 }
 
 provider "aws" {
-  region                  = var.aws_region
+  region = var.aws_region
 }
 
 module "apigateway" {
   source  = "app.terraform.io/victoryurkinpersonal/apigateway/aws"
-  version = "1.0.22"
+  version = "1.0.26"
 
   client_name         = var.organization_name
   aws_region          = var.aws_region
@@ -33,7 +33,7 @@ module "apigateway" {
 
   # Api Gateway Integration
   integration_type = var.integration_type
-  integration_uri  = var.integration_uri
+  integration_uri  = data.terraform_remote_state.dependencies_lambda.outputs.frontend_config_lambda_uri
 
   # Api Gateway Response
   status_code         = var.status_code
