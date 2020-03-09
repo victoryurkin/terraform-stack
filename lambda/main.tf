@@ -23,9 +23,9 @@ module "lambda" {
   defcon_level        = var.defcon_level
   propagate_at_launch = var.propagate_at_launch
 
-  function_name = var.function_name"front-end-config"
-  handler       = "index.handler"
-  runtime       = "nodejs12.x"
+  function_name = var.function_name
+  handler       = var.handler
+  runtime       = var.runtime
 
   role_name        = var.role_name
   role_policy_name = var.role_policy_name
