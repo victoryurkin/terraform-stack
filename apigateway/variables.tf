@@ -2,26 +2,37 @@
 # Tags
 ########################################################
 
-variable client_name {
-  description = "Name of the client"
-}
-
-variable aws_region {
-  description = "AWS region"
+variable organization_name {
+  description = "Name of the organization"
+  type        = string
 }
 
 variable environment {
-  description = "Environment name"
+  description = "Name of the environment in which the resource is provisioned"
+  type        = string
 }
 
-variable shared_credentials_file {
-  description = "Shared creds file"
-  default     = "$HOME/.aws/credentials"
+variable aws_region {
+  description = "(Optional) If specified, the AWS region this bucket should reside in. Otherwise, the region used by the callee."
+  type        = string
 }
 
-variable profile {
-  description = "AWS creds profile"
-  default     = "default"
+variable provisioning {
+  description = "Is it manually provisioned or using terraform?"
+  type        = string
+  default     = "terraform"
+}
+
+variable defcon_level {
+  description = "Level of distress!"
+  type        = string
+  default     = "0"
+}
+
+variable propagate_at_launch {
+  description = "Propogate at launch"
+  type        = bool
+  default     = true
 }
 
 ########################################################
