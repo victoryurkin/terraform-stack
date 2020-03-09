@@ -73,3 +73,8 @@ variable "runtime" {
   description = "(Optionsl) - Runtime value. Example: nodejs12.x"
   default     = "nodejs12.x"
 }
+
+variable "appconfig_client_id" {
+  type        = string
+  description = "(Required) - AppConfig client id"
+}
