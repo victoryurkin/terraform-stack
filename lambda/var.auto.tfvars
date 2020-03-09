@@ -1,6 +1,9 @@
-client_name  = "baseline"
-aws_region  = "us-east-1"
-environment = "prod"
+aws_region          = "us-east-1"
+environment         = "prod"
+organization_name   = "aetion"
+provisioning        = "terraform"
+defcon_level        = 0
+propagate_at_launch = true
 
 # Lambda
 function_name = "front-end-config"
