@@ -81,7 +81,7 @@ module "cloudfront" {
       id          = "apps"
     },
     {
-      domain_name = var.origin_webapp_domain_name
+      domain_name = var.webapp_domain_name
       path        = ""
       id          = "webapp"
     },
