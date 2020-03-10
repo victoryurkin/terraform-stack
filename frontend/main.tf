@@ -42,20 +42,16 @@ module "appconfig" {
   defcon_level        = var.defcon_level
   propagate_at_launch = var.propagate_at_launch
 
-  appconfig_environment = {
-    stack_name     = "front-end-config-stack-appconfig-environment-${var.client_name}"
-    name           = var.environment_name
-    description    = "AppConfig environment of ${var.environment_name}"
-    application_id = format("%s", data.aws_cloudformation_export.application_id.value)
-  }
+  appconfig_environment_stack_name     = "front-end-config-stack-appconfig-environment-${var.client_name}"
+  appconfig_environment_name           = var.environment_name
+  appconfig_environment_description    = "AppConfig environment of ${var.environment_name}"
+  appconfig_environment_application_id = format("%s", data.aws_cloudformation_export.application_id.value)
 
-  configuration_profile = {
-    stack_name     = "front-end-config-stack-appconfig-configuration-profile-${var.client_name}"
-    name           = var.environment_name
-    description    = "AppConfig configuration profile of ${var.environment_name}"
-    location_uri   = "ssm-document://${environment_name}"
-    application_id = format("%s", data.aws_cloudformation_export.application_id.value)
-  }
+  configuration_profile_stack_name     = "front-end-config-stack-appconfig-configuration-profile-${var.client_name}"
+  configuration_profile_name           = var.environment_name
+  configuration_profile_description    = "AppConfig configuration profile of ${var.environment_name}"
+  configuration_profile_location_uri   = "ssm-document://${environment_name}"
+  configuration_profile_application_id = format("%s", data.aws_cloudformation_export.application_id.value)
 }
 
 module "cloudfront" {
