@@ -2,6 +2,11 @@
 # Tags
 ########################################################
 
+variable client_name {
+  description = "Client's name"
+  type        = string
+}
+
 variable aws_region {
   description = "This is the AWS region."
   type        = string
@@ -9,11 +14,6 @@ variable aws_region {
 
 variable environment {
   description = "The organization environment"
-  type        = string
-}
-
-variable organization_name {
-  description = "The organization name"
   type        = string
 }
 
