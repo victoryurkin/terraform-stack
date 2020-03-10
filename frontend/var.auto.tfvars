@@ -1,27 +1,16 @@
-client_name  = "baseline"
-aws_region  = "us-east-1"
-environment = "prod"
+client_name         = "baseline"
+aws_region          = "us-east-1"
+environment         = "prod"
+provisioning        = "terraform"
+defcon_level        = 0
+propagate_at_launch = true
 
-document = {
-    stack_name = "front-end-config-stack-ssm-document-baseline"
-    name       = "baseline.aetion.com"
-    type       = "ApplicationConfiguration"
-    content    = "{}"
-}
+/*
+    document_stack_name = "front-end-config-stack-ssm-document-baseline"
+    document_name       = "baseline.aetion.com"
+    document_type       = "ApplicationConfiguration"
+    document_content    = "{}"
+*/
 
-appconfig_environment = {
-    stack_name  = "front-end-config-stack-appconfig-environment-baseline"
-    name        = "baseline.aetion.com"
-    description = "AppConfig environment"
-}
-
-configuration_profile = {
-    stack_name   = "front-end-config-stack-appconfig-configuration-profile-baseline"
-    name         = "baseline.aetion.com"
-    description  = "AppConfig configuration profile"
-    location_uri = "ssm-document://baseline.aetion.com"
-}
-
-# Cloudfront
-aliases                   = []
-origin_webapp_domain_name = "baseline-webapp.aetion.com"
+environment_name   = "baseline.aetion.com"
+webapp_domain_name = "baseline-webapp.aetion.com"

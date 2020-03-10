@@ -2,60 +2,46 @@
 # Tags
 ########################################################
 
-variable client_name {
-  description = "Name of the client"
-}
-
 variable aws_region {
-  description = "AWS region"
+  description = "This is the AWS region."
+  type        = string
 }
 
 variable environment {
-  description = "Environment name"
-}
-
-variable shared_credentials_file {
-  description = "Shared creds file"
-  default     = "$HOME/.aws/credentials"
-}
-
-variable profile {
-  description = "AWS creds profile"
-  default     = "default"
-}
-
-########################################################
-# AppConfig
-########################################################
-
-variable document {
-  type        = map
-  description = "(Optional) - SSM Document"
-  default     = {}
-}
-
-variable appconfig_environment {
-  type        = map
-  description = "(Optional) - AppConfig environment"
-  default     = {}
-}
-
-variable configuration_profile {
-  description = "Configuration Profile Object"
-  type        = map
-  default     = {}
-}
-
-########################################################
-# CloudFront
-########################################################
-
-variable "aliases" {
-  type        = list
-  description = "(Required) - List of aliases. CAUTION! Names MUSTN'T contain trailing `.`"
-}
-
-variable "origin_webapp_domain_name" {
+  description = "The organization environment"
   type        = string
-  description = "(Required) - webapp origin domain name"
+}
+
+variable organization_name {
+  description = "The organization name"
+  type        = string
+}
+
+variable provisioning {
+  description = "Is it manually provisioned or using terraform?"
+  type        = string
+}
+
+variable defcon_level {
+  description = "Level of distress!"
+  type        = number
+}
+
+variable propagate_at_launch {
+  description = "Propogate at launch"
+  type        = bool
+}
+
+########################################################
+# Client
+########################################################
+
+variable environment_name {
+  type        = string
+  description = "(Required) - Environment name. Example: baseline.aetion.com"
+}
+
+variable webapp_domain_name {
+  type        = string
+  description = "(Required) - Back-end application domain name. Example: baseline-webapp.aetion.com"
 }
