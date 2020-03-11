@@ -13,7 +13,7 @@ provider "aws" {
 
 module "frontendbuild" {
   source              = "app.terraform.io/victoryurkinpersonal/frontendbuild/aws"
-  version             = "1.0.2"
+  version             = "1.0.3"
   client_name         = var.organization_name
   aws_region          = var.aws_region
   environment         = var.environment
