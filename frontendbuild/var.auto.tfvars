@@ -26,6 +26,6 @@ role_statements  = [
       "s3:PutObject*"
     ],
     "Effect": "Allow",
-    "Resource": "arn:aws:s3:*"
+    "Resource": "arn:aws:s3:::*"
   }
 ]
