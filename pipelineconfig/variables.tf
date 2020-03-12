@@ -83,7 +83,7 @@ variable git_branch {
   description = "(Required) - Source stage GitHub branch name."
 }
 
-variable github_token {
+variable git_token {
   type        = string
   description = "(Required) - Source stage GitHub access token."
 }
