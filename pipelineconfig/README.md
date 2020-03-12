@@ -23,7 +23,8 @@ No provider.
 | git_repo | Source stage GitHub repository name. | `string` | n/a | yes |
 | git_branch | Source stage GitHub branch name. | `string` | n/a | yes |
 | git_token | Source stage GitHub access token. | `string` | n/a | yes |
-| deploy_lambda_name | Deployment stage Lambda function name. | `string` |  | no |
+| deploy_lambda_name | Deployment stage Lambda function name. | `string` | n/a | yes |
+| deploy_input_artifact | Deployment stage input artifact. | `string` | n/a | yes |
 
 ## Outputs
 

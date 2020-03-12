@@ -90,6 +90,10 @@ variable git_token {
 
 variable deploy_lambda_name {
   type        = string
-  description = "(Optional) - Deployment stage Lambda function name."
-  default     = ""
+  description = "(Required) - Deployment stage Lambda function name."
+}
+
+variable deploy_input_artifact {
+  type        = string
+  description = "(Required) - Deployment stage input artifact."
 }
