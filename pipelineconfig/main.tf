@@ -13,7 +13,7 @@ provider "aws" {
 
 module "codepipeline" {
   source              = "app.terraform.io/victoryurkinpersonal/codepipeline/aws"
-  version             = "1.0.4"
+  version             = "1.0.5"
   client_name         = var.organization_name
   aws_region          = var.aws_region
   environment         = var.environment
