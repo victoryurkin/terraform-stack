@@ -13,7 +13,7 @@ provider "aws" {
 
 module "codepipeline" {
   source              = "app.terraform.io/victoryurkinpersonal/codepipeline/aws"
-  version             = "1.0.2"
+  version             = "1.0.4"
   client_name         = var.organization_name
   aws_region          = var.aws_region
   environment         = var.environment
@@ -28,5 +28,6 @@ module "codepipeline" {
   git_organization    = var.git_organization
   git_repo            = var.git_repo
   git_branch          = var.git_branch
+  git_token           = var.git_token
   deploy_lambda_name  = var.deploy_lambda_name
 }

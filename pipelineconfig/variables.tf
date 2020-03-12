@@ -83,6 +83,11 @@ variable git_branch {
   description = "(Required) - Source stage GitHub branch name."
 }
 
+variable github_token {
+  type        = string
+  description = "(Required) - Source stage GitHub access token."
+}
+
 variable deploy_lambda_name {
   type        = string
   description = "(Optional) - Deployment stage Lambda function name."
