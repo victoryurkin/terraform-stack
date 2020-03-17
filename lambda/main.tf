@@ -33,5 +33,20 @@ module "lambda" {
 
   role_name        = var.role_name
   role_policy_name = var.role_policy_name
-  role_statements  = file("${path.module}/policy-statements.json")
+  role_statements  = [
+    {
+      "Action": ["appconfig:GetConfiguration"],
+      "Effect": "Allow",
+      "Resource": "arn:aws:ssm:*"
+    },
+    {
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"        
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:logs:*"
+    }
+  ]
 }
