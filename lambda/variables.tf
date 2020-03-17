@@ -50,8 +50,8 @@ variable role_policy_name {
 }
 
 variable role_statements {
-  description = "(Required) - A list of statements for the policy"
-  type        = list
+  description = "(Required) - A json filename with the list of policy statements"
+  type        = string
 }
 
 ########################################################

@@ -33,5 +33,5 @@ module "lambda" {
 
   role_name        = var.role_name
   role_policy_name = var.role_policy_name
-  role_statements  = var.role_statements
+  role_statements  = file("${path.module}/${var.role_statements}")
 }
