@@ -25,4 +25,10 @@ module "frontendbuild" {
   role_name           = var.role_name
   role_policy_name    = var.role_policy_name
   role_statements     = var.role_statements
+  environment_variables = [
+    {
+      name = "test"
+      value = "123"
+    }
+  ]
 }
