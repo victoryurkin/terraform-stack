@@ -14,7 +14,7 @@ provider "aws" {
 
 module "apigateway" {
   source  = "app.terraform.io/victoryurkinpersonal/apigateway/aws"
-  version = "1.0.23"
+  version = "1.0.24"
 
   client_name         = var.organization_name
   aws_region          = var.aws_region
@@ -41,4 +41,6 @@ module "apigateway" {
 
   # Api Gateway Deployment
   stage_name = var.stage_name
+
+  function_name = data.terraform_remote_state.dependencies_lambda.outputs.frontend_config_lambda_name
 }
