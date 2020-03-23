@@ -56,7 +56,7 @@ module "appconfig" {
 
 module "cloudfront" {
   source  = "app.terraform.io/victoryurkinpersonal/cloudfront/aws"
-  version = "1.0.40"
+  version = "1.0.41"
 
   client_name         = var.client_name
   aws_region          = var.aws_region
