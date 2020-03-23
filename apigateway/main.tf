@@ -16,7 +16,7 @@ module "apigateway" {
   source  = "app.terraform.io/victoryurkinpersonal/apigateway/aws"
   version = "1.0.37"
 
-  client_name         = var.organization_name
+  client_name         = var.client_name
   aws_region          = var.aws_region
   environment         = var.environment
   provisioning        = var.provisioning
