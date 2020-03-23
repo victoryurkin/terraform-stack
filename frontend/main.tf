@@ -56,7 +56,7 @@ module "appconfig" {
 
 module "cloudfront" {
   source  = "app.terraform.io/victoryurkinpersonal/cloudfront/aws"
-  version = "1.0.37"
+  version = "1.0.38"
 
   client_name         = var.client_name
   aws_region          = var.aws_region
@@ -71,24 +71,28 @@ module "cloudfront" {
   cache_behavior_viewer_protocol_policy_default = "redirect-to-https"
   origins = [
     {
-      domain_name = data.terraform_remote_state.dependencies_s3.outputs.frontend_s3_bucket_domain_name
-      path        = "/main/1.0.0(1)"
-      id          = "main"
+      domain_name  = data.terraform_remote_state.dependencies_s3.outputs.frontend_s3_bucket_domain_name
+      path         = "/main/1.0.0(1)"
+      id           = "main"
+      is_s3_origin = true
     },
     {
-      domain_name = data.terraform_remote_state.dependencies_s3.outputs.frontend_s3_bucket_domain_name
-      path        = ""
-      id          = "apps"
+      domain_name  = data.terraform_remote_state.dependencies_s3.outputs.frontend_s3_bucket_domain_name
+      path         = ""
+      id           = "apps"
+      is_s3_origin = true
     },
     {
-      domain_name = var.webapp_domain_name
-      path        = ""
-      id          = "webapp"
+      domain_name  = var.webapp_domain_name
+      path         = ""
+      id           = "webapp"
+      is_s3_origin = false
     },
     {
-      domain_name = data.terraform_remote_state.dependencies_apigateway.outputs.frontend_config_api_gateway_invoke_url
-      path        = ""
-      id          = "config"
+      domain_name  = data.terraform_remote_state.dependencies_apigateway.outputs.frontend_config_api_gateway_invoke_url
+      path         = ""
+      id           = "config"
+      is_s3_origin = false
     }
   ]
   ordered_behaviors = [
